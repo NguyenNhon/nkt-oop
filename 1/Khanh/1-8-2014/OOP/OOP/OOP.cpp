@@ -12,12 +12,12 @@ public:
 	{
 		return (float)_tu_so/_mau_so;
 	}
+	int xuat()
+	{
+	cout<<"Tu so: "<<_tu_so<<endl;
+	cout<<"Mau so: "<<_mau_so<<endl;
+	}
 };
-void xuat(Phan_So_Class phan_so)
-{
-	cout<<"Tu so: "<<phan_so._tu_so<<endl;
-	cout<<"Mau so: "<<phan_so._mau_so<<endl;
-}
 int main()
 {
 	PhanSo_Class phan_so;

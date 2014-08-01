@@ -12,6 +12,11 @@ float Gia_Tri_Phan_So(Phan_So_Struct phan_so)
 {
 	return (float)phan_so._tu_so/phan_so._mau_so;
 }
+void xuat(Phan_So_Struct phan_so)
+{
+	cout<<"Tu so: "<<phan_so._tu_so<<endl;
+	cout<<"Mau so: "<<phan_so._mau_so<<endl;
+}
 
 int main()
 {

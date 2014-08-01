@@ -22,7 +22,7 @@ public:
 	// Dung phep quy dong de cong phan so
 	PhanSo_Class Cong_Phan_So(PhanSo_Class phan_so)
 	{
-		_tu_so = _tu_so*phan_so._mau_so + phan_so._tu_so;
+		_tu_so = _tu_so*phan_so._mau_so + phan_so._tu_so*_mau_so;
 		_mau_so=_mau_so*phan_so._mau_so;
 		return *this;
 	}

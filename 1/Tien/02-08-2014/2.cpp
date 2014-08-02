@@ -21,9 +21,11 @@ public:
 	{
 		return a+b+c;
 	}
+
 	float DienTich()
 	{
-		return sqrt(float (ChuVi()*(ChuVi() -a)*(ChuVi() - b)*(ChuVi()-c)));
+		float p=ChuVi()/2;
+		return sqrt(float (p*(p -a)*(p - b)*(p-c)));
 	}
 };
 

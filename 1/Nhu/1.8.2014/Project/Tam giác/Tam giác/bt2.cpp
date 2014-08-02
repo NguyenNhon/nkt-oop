@@ -1,0 +1,52 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class tamgiac
+{
+public:
+	int canh_a;
+	int canh_b;
+	int canh_c;
+	tamgiac InPut()
+	{
+		cout<<"nhap canh a = ";
+		cin>>canh_a;
+		cout<<"nhap canh b = ";
+		cin>>canh_b;
+		cout<<"nhap canh c = ";
+		cin>>canh_c;
+		return *this;
+	}
+	void OutPut()
+	{
+		cout<<"do dai canh a = "<<canh_a<<endl;
+		cout<<"do dai canh b = "<<canh_b<<endl;
+		cout<<"do dai canh c = "<<canh_c<<endl;
+	}
+	int ChuVi()
+	{
+		if((canh_a + canh_b == canh_c) || (canh_a + canh_c == canh_b) || (canh_c + canh_b == canh_a))
+			{
+				cout<<"khong phai tam giac"<<endl;
+				return 0;
+			}
+		else
+			return canh_a + canh_b + canh_c;
+	}
+	float DienTich()
+	{
+		float p=(float)(canh_a + canh_b + canh_c)/2;
+		return sqrt((float)p*(p-canh_a)*(p-canh_b)*(p-canh_c));
+	}
+};
+int main()
+{
+	tamgiac tg;
+	tg.InPut();
+	cout<<":::::::::::"<<endl;
+	tg.OutPut();
+	cout<<":::::::::::"<<endl;
+	cout<<"Chu vi = "<<tg.ChuVi()<<endl;
+	cout<<"Dien tich = "<<tg.DienTich()<<endl;
+	return 0;
+}

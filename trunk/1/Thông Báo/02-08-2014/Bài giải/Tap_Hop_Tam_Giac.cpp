@@ -120,7 +120,8 @@ public:
 class Tap_Hop_Tam_Giac 
 {
 private:
-	Tam_Giac* _mang;	
+	Tam_Giac _mang[20];	
+
 	int _so_phan_tu;
 public:	
 
@@ -128,13 +129,11 @@ public:
 	Tap_Hop_Tam_Giac()
 	{
 		this->_so_phan_tu=0;	
-		_mang=new Tam_Giac[20];
 	}
 
 	// Destructor
 	~Tap_Hop_Tam_Giac()
 	{		
-		delete[]_mang;
 	}
 
 	void Them(Tam_Giac tam_giac)

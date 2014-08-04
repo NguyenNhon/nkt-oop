@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+class tamgiac
+{
+private:
+	int a;
+	int b;
+	int c;
+public:
+	//constructor
+	tamgiac(int a,int b,int c)
+	{
+		setter(a,b,c);
+	}
+	//destructor
+	~tamgiac()
+	{
+	}
+	void setter(int _a,int _b,int _c)
+	{
+		a=_a;
+		b=_b;
+		c=_c;
+		if((a+b)<=c || (a+c)<=b || (b+c)<=a)
+			exit(1);
+	}
+	int getter_a()
+	{
+		return a;
+	}
+	int getter_b()
+	{
+		return b;
+	}
+	int getter_c()
+	{
+		return c;
+	}
+	void OutPut()
+	{
+		cout<<"canh a = "<<a<<endl;
+		cout<<"canh b = "<<b<<endl;
+		cout<<"canh c = "<<c<<endl;
+	}
+};
+int main()
+{
+	int a ,b ,c;
+	cout<<"canh a = ";
+	cin>>a;
+	cout<<"canh b = ";
+	cin>>b;
+	cout<<"canh c = ";
+	cin>>c;
+	tamgiac tg(a,b,c);
+	tg.OutPut();
+	return 0;
+}

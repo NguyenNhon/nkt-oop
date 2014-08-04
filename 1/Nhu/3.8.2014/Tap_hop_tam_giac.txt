@@ -1,0 +1,131 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class tamgiac
+{
+private:
+	int a;
+	int b;
+	int c;
+public:
+	//constructor
+	tamgiac()
+	{
+	}
+	//destructor
+	~tamgiac()
+	{
+	}
+	void setter(int _a,int _b,int _c)
+	{
+		a=_a;
+		b=_b;
+		c=_c;
+		if((a+b)<=c || (a+c)<=b || (b+c)<=a)
+			exit(1);
+	}
+	void InPut()
+	{
+		int a,b,c;
+		cout<<"nhap canh a = ";
+		cin>>a;
+		cout<<"nhap canh b = ";
+		cin>>b;
+		cout<<"nhap canh c = ";
+		cin>>c;
+		setter(a,b,c);
+	}
+	int getter_a()
+	{
+		return a;
+	}
+	int getter_b()
+	{
+		return b;
+	}
+	int getter_c()
+	{
+		return c;
+	}
+	void OutPut()
+	{
+		cout<<"canh a = "<<a<<endl;
+		cout<<"canh b = "<<b<<endl;
+		cout<<"canh c = "<<c<<endl;
+	}
+	int Chu_Vi()
+	{
+		return a+b+c;
+	}
+	int Dien_Tich()
+	{
+		float p=(float)(a+b+c)/2;
+		return sqrt((float)p*(p-a)*(p-b)*(p-c));
+	}
+};
+class tap_hop_tamgiac
+{
+private:
+	tamgiac mang[20];
+	int so_luong_tamgiac;
+public:
+	void them()
+	{
+		cout<<"nhap so luong tam giac nhap them : ";
+		cin>>so_luong_tamgiac;
+		for(int i=0;i<so_luong_tamgiac;i++)
+			mang[i].InPut();
+	}
+	float tong_CV()
+	{
+		float CV=0;
+		for(int i=0;i<so_luong_tamgiac;i++)
+			CV+=mang[i].Chu_Vi();
+		return CV;
+	}
+	float tong_DT()
+	{
+		float DT=0;
+		for(int i=0;i<so_luong_tamgiac;i++)
+			DT+=mang[i].Dien_Tich();
+		return DT;
+	}
+	void Out_taphop()
+	{
+		for(int i=0;i<so_luong_tamgiac;i++)
+		{
+			cout<<"tam giac thu "<<i+1<<endl;
+			mang[i].OutPut();
+		}
+	}
+	void sap_xep()
+	{
+		tamgiac t;
+		for(int i=0;i<so_luong_tamgiac - 1;i++)
+		{
+			for(int j=i+1;j<so_luong_tamgiac;j++)
+				if( mang[i].Chu_Vi() > mang[j].Chu_Vi())
+				{
+					t=mang[i];
+					mang[i]= mang[j];
+					mang[j]= t;
+				}
+		}
+	}
+};
+int main()
+{
+	tap_hop_tamgiac tap_hop;
+	tap_hop.them();
+
+	cout<<"tat ca tam giac trong mang :"<<endl;
+	tap_hop.Out_taphop();
+	cout<<endl;
+	cout<<"tong chu vi = "<<tap_hop.tong_CV()<<endl;
+	cout<<"tong dien tich = "<<tap_hop.tong_DT()<<endl;
+	cout<<endl;
+	cout<<"mang sau khi sap xep theo chu vi"<<endl;
+	tap_hop.sap_xep();
+	tap_hop.Out_taphop();
+	return 0;
+}

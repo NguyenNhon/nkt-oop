@@ -1,0 +1,71 @@
+#include<iostream>
+
+using namespace std;
+
+enum LoaiHinh
+{
+	eHinhVuong,
+	eHinhTamGiac
+};
+class HinhHoc
+{
+private:
+	LoaiHinh _loai;
+};
+
+class HinhTamGiac: public HinhHoc
+{
+
+};
+class HinhVuong: public HinhHoc
+{
+
+};
+
+class Tap_Hop
+{
+private:
+	static const int MAX = 10;
+	HinhHoc* _hinh[MAX]; // array contains 10 HinhHoc pointers
+};
+
+int main()
+{
+	Tap_Hop *tapHop=new Tap_Hop();
+
+	unsigned int n;
+	cout<<"So luong hinh hoc: "<<endl;
+	cin>>n;
+
+	int i=0;
+	while (i<n)
+	{
+		int tuyChon;
+		do{
+			cout<<"Nhan 1 de nhap hinh vuong!"<<endl;
+			cout<<"Nhan 2 de nhap hinh tron!"<<endl;
+			cin>>tuyChon;
+		}while (tuyChon == 1 || tuyChon ==2);
+
+		HinhHoc *hinh;
+		if(tuyChon==1)
+		{
+			hinh=new HinhVuong();			
+		}else
+		{
+			hinh=new HinhTamGiac();
+		}
+		hinh->Nhap();
+
+		tapHop->Them(hinh);
+	}
+
+	cout<<"So luong hinh hoc: "<<tapHop->GetSoLuongHinh()<<endl;
+	cout<<"Tong chu vi la: "<<tapHop.GetTongChuVi()<<endl;
+	cout<<"Danh sach cac hinh: "<<endl;
+	tapHop->Xuat();
+
+	delete tapHop;
+	tapHop = NULL;
+	return 0;
+}

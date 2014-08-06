@@ -1,0 +1,263 @@
+#include<iostream>
+#include<conio.h>
+#include<math.h>
+using namespace std;
+enum Canh
+{
+	Canh_a,
+	Canh_b,
+	Canh_c,
+	Canh_hv
+};
+class tamgiac
+{
+private:
+	unsigned int a;
+	unsigned int b;
+	unsigned int c;
+
+	bool dieu_kien(unsigned int a,unsigned int b,unsigned int c)
+	{
+		if((a+b)<c || (a+c)<b || (b+c)<a)
+			return false;
+		else
+			return true;
+	}
+public:
+	tamgiac()
+	{
+		a=0;
+		b=0;
+		c=0;
+	};
+	tamgiac(unsigned int a,unsigned int b,unsigned int c)
+	{
+		if(set(a,b,c)==false)
+		{
+			cout<<"gia tri ban nhap khong hop le!"<<endl;
+			getch();
+			exit(1);
+		}
+	}
+	bool set(unsigned int _a,unsigned int _b,unsigned int _c)
+	{
+		if((_a>0) && (_b>0) && (_c>0) && (dieu_kien(_a,_b,_c)==true))
+		{
+			a=_a;
+			b=_b;
+			c=_c;
+			return true;
+		}
+		else 
+			return false;
+	}
+	bool set(Canh canh,unsigned int gtri)
+	{
+		if(gtri <= 0)
+			return false;
+		switch(canh)
+		{
+		case Canh_a:
+			if(dieu_kien(gtri,b,c) == true)
+				a=gtri;
+			else 
+				return false;
+			break;
+		case Canh_b:
+			if(dieu_kien(a,gtri,c) == true)
+				b=gtri;
+			else
+				return false;
+			break;
+		case Canh_c:
+			if(dieu_kien(a,b,gtri) == true)
+				c=gtri;
+			else 
+				return false;
+			break;
+		}
+	}
+	int get(Canh canh)
+	{
+		if(canh == Canh_a)
+			return a;
+		if(canh == Canh_b)
+			return b;
+		if(canh == Canh_c)
+			return c;
+	}
+	int Chu_vi()
+	{
+		return a+b+c;
+	}
+	int Dien_tich()
+	{
+		float nuachuvi = Chu_vi()/2;
+		return (float)sqrt(nuachuvi*(nuachuvi-a)*(nuachuvi-b)*(nuachuvi-c));
+	}
+	void xuat()
+	{
+		cout<<"Canh a = "<<a<<"\tCanh b = "<<b<<"\tCanh c = "<<c<<endl;
+	}
+};
+class hinhvuong
+{
+private:
+	unsigned int hv;
+public:
+	hinhvuong()
+	{
+		hv=0;
+	}
+	hinhvuong(unsigned int hv)
+	{
+		if(set(hv) == false)
+		{
+			cout<<"gia tri canh khong hop le!"<<endl;
+			getch();
+			exit(1);
+		}
+	}
+	bool set(unsigned int _hv)
+	{
+		if(_hv >= 0) 
+		{
+			hv=_hv;
+			return true;
+		}
+		else
+			return false;
+	}
+	int Chu_vi()
+	{
+		return hv*4;
+	}
+	int Dien_tich()
+	{
+		return hv*hv;
+	}
+	int get(Canh canh)
+	{
+		if(canh == Canh_hv)
+			return hv;
+	}
+	void xuat()
+	{
+		cout<<"Canh hinh vuong = "<<hv<<endl;
+	}
+};
+class Tap_hop
+{
+private:
+	tamgiac** mang_tamgiac;
+	hinhvuong** mang_hinhvuong;
+	int so_luong;
+	static const int Limit = 20;
+public:
+	//constuctor
+	Tap_hop()
+	{
+		so_luong = 0;
+		mang_tamgiac = new tamgiac*[Limit];
+		mang_hinhvuong = new hinhvuong*[Limit];
+		for(int i = 0;i<Limit;i++)
+		{
+			mang_tamgiac[i]=NULL;
+			mang_hinhvuong[i]=NULL;
+		}
+	}
+	//destructor
+	~Tap_hop()
+	{
+		for(int i=0;i<so_luong;i++)
+		{
+			if(mang_tamgiac[i] != NULL)
+			{
+				delete[] mang_tamgiac[i];
+				mang_tamgiac[i]=NULL;
+			}
+			if(mang_hinhvuong[i] != NULL)
+			{
+				delete[] mang_hinhvuong[i];
+				mang_hinhvuong[i]=NULL;
+			}
+		}
+		delete[] mang_tamgiac;
+		delete[] mang_hinhvuong;
+	}
+	void them(tamgiac *tg)
+	{
+		if(so_luong < Limit)
+		{
+			mang_tamgiac[so_luong]=tg;
+			so_luong++;
+		}
+	}
+	void them(hinhvuong *hvg)
+	{
+		if(so_luong < Limit)
+		{
+			mang_hinhvuong[so_luong]=hvg;
+			so_luong++;
+		}
+	}
+	int tong_CV()
+	{
+		int tong=0;
+		for(int i=0;i<so_luong;i++)
+		{
+			if(mang_tamgiac[i] != NULL)
+				tong+=(mang_tamgiac[i]->Chu_vi());
+			if(mang_hinhvuong[i] != NULL)
+				tong+=(mang_hinhvuong[i]->Chu_vi());
+		}
+		return tong;
+	}
+	int tong_DT()
+	{
+		int tong = 0;
+		for(int i=0;i<so_luong;i++)
+		{
+			if(mang_tamgiac[i] != NULL)
+				tong+=(mang_tamgiac[i]->Dien_tich());
+			if(mang_hinhvuong[i] != NULL)
+				tong+=(mang_hinhvuong[i]->Dien_tich());
+		}
+		return tong;
+	}
+	int get_so_luong()
+	{
+		return so_luong;
+	}
+	void xuat()
+	{
+		for(int i=0;i<so_luong;i++)
+		{
+			if(mang_tamgiac[i] != NULL)
+				mang_tamgiac[i]->xuat();
+			if(mang_hinhvuong[i] != NULL)
+				mang_hinhvuong[i]->xuat();
+		}
+	}
+};
+int main()
+{
+	Tap_hop* taphop = new Tap_hop();
+	taphop->them(new tamgiac(2,3,4));
+	taphop->them(new tamgiac(3,4,5));
+	taphop->them(new tamgiac(5,6,7));
+	
+	taphop->them(new hinhvuong(3));
+	taphop->them(new hinhvuong(4));
+	taphop->them(new hinhvuong(5));
+	
+	cout<<"so luong hinh trong tap hop : "<<taphop->get_so_luong()<<endl;
+	cout<<"danh sach hinh trong tap hop : "<<endl;
+	taphop->xuat();
+
+	cout<<"tong chu vi : "<<taphop->tong_CV()<<endl;
+	cout<<"tong dien tich : "<<taphop->tong_DT()<<endl;
+	
+	/*delete[] taphop;*/// de ham nay khi chay xong chuong trinh bao loi. ?? 
+	return 0;
+}

@@ -37,16 +37,7 @@ public:
 		_tu_so=tu;
 	}
 
-	void Set_Mau_So(int mau)
-	{
-		if(mau==0)
-		{
-			cout<<"Mau so khong the bang 0!"<<endl;
-			exit(1);
-		}
-		else
-		{
-			_mau_so=mau;
+
 		}
 	}
 

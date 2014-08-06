@@ -118,7 +118,7 @@ public:
 	}
 };
 
-class Tap_Hop_Tam_Giac 
+class Tap_Hop_Tam_Giac  b[k++]=a[i]
 {
 private:
 	static const int MAX = 20;
@@ -219,5 +219,6 @@ int main()
 
 	cout<<"Tong dien tich:"<<tap_hop->Tinh_Tong_Dien_Tich()<<endl;
 
+	
 	return 0;
 }

@@ -1,11 +1,13 @@
 #include<iostream>
 
 using namespace std;
+
 enum LoaiHinhHoc
 {
 	eHinhVuong,
 	eHinhTamGiac
 };
+
 class HinhHoc
 {
 protected:
@@ -24,6 +26,10 @@ public:
 class HinhTamGiac: public HinhHoc
 {
 public:
+	HinhTamGiac()
+	{
+		_loai=LoaiHinhHoc::eHinhTamGiac;
+	}
 	int ChuVi()
 	{
 		return 5;
@@ -37,7 +43,10 @@ public:
 class HinhVuong:public HinhHoc
 {
 public:
-	
+	HinhVuong()
+	{
+		_loai=LoaiHinhHoc::eHinhVuong;
+	}
 };
 
 int main()

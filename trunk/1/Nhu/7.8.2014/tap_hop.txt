@@ -1,0 +1,233 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+enum LoaiHinh
+{
+	eHinhVuong,
+	eHinhTamGiac
+};
+
+class HinhHoc
+{
+private:
+	LoaiHinh _loai;
+public:
+	HinhHoc(){}
+	~HinhHoc(){}
+	virtual int chu_vi(){return 0;}
+	virtual void nhap(){}
+	virtual void xuat(){}
+};
+
+class HinhTamGiac: public HinhHoc
+{
+private:
+	unsigned int a;
+	unsigned int b;
+	unsigned int c;
+
+	bool dieu_kien(unsigned int a,unsigned int b,unsigned int c)
+	{
+		if((a+b)<c || (a+c)<b || (b+c)<a)
+			return false;
+		else
+			return true;
+	}
+public:
+	HinhTamGiac()
+	{
+		a=0;
+		b=0;
+		c=0;
+	}
+	~HinhTamGiac()
+	{
+		cout<<"goi ham huy";
+	}
+	bool set(unsigned int _a,unsigned int _b,unsigned int _c)
+	{
+		if((_a>0) && (_b>0) && (_c>0) && (dieu_kien(_a,_b,_c)==true))
+		{
+			a=_a;
+			b=_b;
+			c=_c;
+			return true;
+		}
+		else 
+			return false;
+	}
+	void nhap()
+	{
+		unsigned int _a,_b,_c;
+		cout<<"nhap 3 canh cua tam giac : "<<endl;
+		cin>>_a>>_b>>_c;
+		if( set(_a,_b,_c) == false)
+		{
+			cout<<"gia tri ban nhap khong hop le! "<<endl;
+			getch();
+			exit(1);
+		}
+	}
+	int chu_vi()
+	{
+		return a+b+c;
+	}
+	int get_a()
+	{
+		return a;
+	}
+	int get_b()
+	{
+		return b;
+	}
+	int get_c()
+	{
+		return c;
+	}
+	void xuat()
+	{
+		cout<<"Hinh tam giac"<<endl;
+		cout<<"Canh a = "<<a<<"\tCanh b = "<<b<<"\tCanh c = "<<c<<endl;
+	}
+};
+class HinhVuong: public HinhHoc
+{
+private:
+	unsigned int hv;
+public:
+	HinhVuong()
+	{
+		hv=0;
+	}
+	~HinhVuong()
+	{
+		cout<<"goi ham huy";
+	}
+	bool set(unsigned int _hv)
+	{
+		if(_hv <= 0)
+			return false;
+		else 
+		{
+			hv=_hv;
+			return true;
+		}
+	}
+	void nhap()
+	{
+		unsigned int _hv;
+		cout<<"nhap canh hinh vuong : ";
+		cin>>_hv;
+		if(set(_hv) == false)
+		{
+			cout<<"gia tri ban nhap khong hop le!"<<endl;
+			getch();
+			exit(1);
+		}
+	}
+	int chu_vi()
+	{
+		return hv*4;
+	}
+	int get()
+	{
+		return hv;
+	}
+	void xuat()
+	{
+		cout<<"Hinh vuong"<<endl;
+		cout<<"Canh = "<<hv<<endl;
+	}
+};
+
+class Tap_Hop
+{
+private:
+	static const int MAX = 10;
+	int so_luong;
+	HinhHoc* _hinh[MAX]; // array contains 10 HinhHoc pointers
+public:
+	Tap_Hop()
+	{
+		so_luong=0;
+		for(int i=0;i<MAX;i++)
+			_hinh[i]=NULL;
+	}
+	~Tap_Hop()
+	{
+		for(int i=0;i<MAX;i++)
+			if(_hinh[i] != NULL)
+			{
+				delete _hinh[i];
+				_hinh[i]=NULL;
+			}
+		delete[] _hinh;
+	}
+	void them(HinhHoc *hinh)
+	{
+		if(so_luong < MAX)
+		{
+			_hinh[so_luong]=hinh;
+			so_luong++;
+		}
+	}
+	int GetTongChuVi()
+	{
+		int cv=0;
+		for(int i=0;i<so_luong;i++)
+			if(_hinh[i] != NULL)
+				cv+=_hinh[i]->chu_vi();
+		return cv;
+	}
+	int GetSoLuongHinh()
+	{
+		return so_luong;
+	}
+	void xuat()
+	{
+		for(int i=0;i<so_luong;i++)
+			if(_hinh[i] != NULL)
+				_hinh[i]->xuat();
+	}
+};
+
+int main()
+{
+	Tap_Hop *tapHop=new Tap_Hop();
+
+	unsigned int n;
+	cout<<"So luong hinh hoc: "<<endl;
+	cin>>n;
+
+	int i=0;
+	while (i<n)
+	{
+		int tuyChon;
+		do{
+			cout<<"Nhan 1 de nhap hinh vuong!"<<endl;
+			cout<<"Nhan 2 de nhap hinh tam giac!"<<endl;
+			cin>>tuyChon;
+		}while (tuyChon != 1 && tuyChon !=2);
+
+		HinhHoc *hinh;
+		if(tuyChon==1)
+		{
+			hinh=new HinhVuong();			
+		}else
+		{
+			hinh=new HinhTamGiac();
+		}
+		hinh->nhap();
+
+		tapHop->them(hinh);
+		i++;
+	}
+
+	cout<<"So luong hinh hoc: "<<tapHop->GetSoLuongHinh()<<endl;
+	cout<<"Tong chu vi la: "<<tapHop->GetTongChuVi()<<endl;
+	cout<<"Danh sach cac hinh: "<<endl;
+	tapHop->xuat();
+	
+	return 0;
+}

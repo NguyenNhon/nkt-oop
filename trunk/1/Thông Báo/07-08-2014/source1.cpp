@@ -22,7 +22,7 @@ class B: public A
 public:
 	// This call A default constructor function.
 	// But A has no default constructor, so this will raise error
-	B() 
+	B() // B(): A()
 	{
 
 	}

@@ -37,7 +37,12 @@ private:
 		else return false;
 	}
 public:
-	HinhTamGiac(){}
+	HinhTamGiac()
+	{
+		_a=0;
+		_b=0;
+		_c=0;
+	}
 	~HinhTamGiac(){}
 	void Nhap()
 	{
@@ -53,7 +58,7 @@ public:
 	}
 	bool set(unsigned int a, unsigned int b, unsigned int c)
 	{
-		if(_a>0 && _b>0 && c>0 && kiem_tra(a,b,c)==true)
+		if(a>0 && b>0 && c>0 && kiem_tra(a,b,c)==true)
 		{
 			this->_a=a;
 			this->_b=b;

@@ -1,0 +1,294 @@
+
+#include<iostream>
+#include<conio.h>
+#include<string>
+
+using namespace std;
+
+enum Loai
+{
+	Cong_nhan_ban_hang,
+	Cong_nhan_ke_toan,
+	Cong_nhan_san_xuat
+};
+class cong_nhan
+{
+protected:
+	Loai _loai;
+public:
+	string ten;
+	int tuoi;
+	Loai get_loai(){return _loai;}
+	virtual void xuat()
+	{
+		cout<<endl<<_loai;
+		cout<<"ten cong nhan : "<<ten<<endl;
+		cout<<"tuoi : "<<tuoi<<endl;
+		cout<<"luong : "<<luong()<<endl;
+	}
+	virtual void nhap(){}
+	virtual int luong(){return 0;}
+};
+class CN_san_xuat: public cong_nhan
+{
+private:
+	int so_sanpham;
+public:
+	CN_san_xuat()
+	{
+		_loai=Loai::Cong_nhan_san_xuat;
+	}
+	~CN_san_xuat()
+	{
+		cout<<"goi ham huy";
+	}
+	int get_loai()
+	{
+		_loai=Loai::Cong_nhan_san_xuat;
+		return _loai;
+	}
+	int luong()
+	{
+		return so_sanpham*13;
+	}
+	void nhap()
+	{
+		cout<<"nhap ten cong nhan : ";
+		cin.ignore();
+		getline(cin,ten);
+		cout<<"nhap tuoi : ";
+		cin>>tuoi;
+		cout<<"nhap so san pham : ";
+		cin>>so_sanpham;
+	}
+	/*void xuat()
+	{
+		cout<<endl<<_loai<<endl;
+		cout<<"ten cong nhan : "<<ten<<endl;
+		cout<<"tuoi : "<<tuoi<<endl;
+		cout<<"luong : "<<luong()<<endl;
+	}*/
+};
+class CN_ke_toan : public cong_nhan
+{
+private:
+	int ngay_laodong;
+public:
+	CN_ke_toan()
+	{
+		_loai=Loai::Cong_nhan_ke_toan;
+	}
+	~CN_ke_toan()
+	{
+		cout<<"goi ham huy"<<endl;
+	}
+	int get_loai()
+	{
+		_loai=Loai::Cong_nhan_ke_toan;
+		return _loai;
+	}
+	int luong()
+	{
+		return ngay_laodong*150;
+	}
+	void nhap()
+	{
+		cout<<"nhap ten cong nhan : ";
+		cin.ignore();
+		getline(cin,ten);
+		cout<<"nhap tuoi : ";
+		cin>>tuoi;
+		cout<<"nhap so ngay lao dong : ";
+		cin>>ngay_laodong;
+	}
+	/*void xuat()
+	{
+		cout<<endl<<_loai;
+		cout<<"ten cong nhan : "<<ten<<endl;
+		cout<<"tuoi : "<<tuoi<<endl;
+		cout<<"luong : "<<luong()<<endl;
+	}*/
+};
+class CN_ban_hang : public cong_nhan
+{
+private:
+	int ngay_laodong;
+	int so_hang;
+public:
+	CN_ban_hang()
+	{
+		_loai=Loai::Cong_nhan_ban_hang;
+	}
+	~CN_ban_hang()
+	{
+		cout<<"goi ham huy"<<endl;
+	}
+	int get_loai()
+	{
+		_loai=Loai::Cong_nhan_ban_hang;
+		return _loai;
+	}
+	int luong()
+	{
+		return ngay_laodong*150 + so_hang *16;
+	}
+	void nhap()
+	{
+		cout<<"nhap ten cong nhan : ";
+		cin.ignore();
+		getline(cin,ten);
+		cout<<"nhap tuoi : ";
+		cin>>tuoi;
+		cout<<"nhap so ngay lao dong : ";
+		cin>>ngay_laodong;
+		cout<<"nhap so hang hoa da ban : ";
+		cin>>so_hang;
+	}
+	/*void xuat()
+	{
+		cout<<endl<<_loai;
+		cout<<"ten cong nhan : "<<ten<<endl;
+		cout<<"tuoi : "<<tuoi<<endl;
+		cout<<"luong : "<<luong()<<endl;
+	}*/
+};
+class quan_ly 
+{
+private:
+	static const int MAX=100;
+	int so_luong;
+	cong_nhan *mang[MAX];
+public:
+	quan_ly()
+	{
+		so_luong=0;
+		for(int i=0;i<MAX;i++)
+			mang[i]=NULL;
+	}
+	~quan_ly()
+	{
+		for(int i=0;i<MAX;i++)
+			if(mang[i] != NULL)
+			{
+				delete mang[i];
+				mang[i]=NULL;
+			}
+		delete[] mang;
+	}
+	void them(cong_nhan *cn)
+	{
+		if(so_luong<MAX)
+		{
+			mang[so_luong]=cn;
+			so_luong++;
+		}
+	}
+	void tim()
+	{
+		int dem=0;
+		string _ten;
+		cin.ignore();
+		cout<<"nhap ten cong nhan can tim : ";
+		getline(cin,_ten);
+		for(int i=0;i<so_luong;i++)
+		{
+			if(_ten.compare(mang[i]->ten)==0)
+			{
+				mang[i]->xuat();
+				dem=1;
+			}
+		}
+		if(dem==0) cout<<"khong tim thay"<<endl;
+	}
+	void xoa()
+	{
+		int dem=0;
+		string _ten_;
+		cin.ignore();
+		cout<<"nhap ten cong nhan can xoa : ";
+		getline(cin,_ten_);
+		for(int i=0;i<so_luong;i++)
+		{
+			if(_ten_.compare(mang[i]->ten)==0)
+			{
+				while(i<so_luong)
+				{
+					mang[i]=mang[i+1];
+					i++;
+				}
+				so_luong--;
+				dem=1;
+			}
+		}
+		if(dem==0) cout<<"khong tim thay nhan vien can xoa"<<endl;
+	}
+	int tong_luong()
+	{
+		int tong=0;
+		for(int i=0;i<so_luong;i++)
+			tong+=mang[i]->luong();
+		return tong;
+	}
+	void dem_loai()
+	{
+		int demsx=0,demkt=0,dembh=0;
+		for(int i=0;i<so_luong;i++)
+		{
+			if(mang[i]->get_loai()==Cong_nhan_san_xuat)
+				demsx++;
+			else 
+				if(mang[i]->get_loai()==Cong_nhan_ke_toan)
+					demkt++;
+				else 
+					dembh++;
+		}
+		cout<<"so luong cong nhan san xuat : "<<demsx<<endl;
+		cout<<"so luong cong nhan ke toan : "<<demkt<<endl;
+		cout<<"so luong cong nhan ban hang : "<<dembh<<endl;
+	}
+	void xuat()
+	{
+		cout<<"::::::::::::::::"<<endl;
+		for(int i=0;i<so_luong;i++)
+			mang[i]->xuat();
+	}
+};
+int main()
+{
+	quan_ly* qly= new quan_ly();
+	unsigned int n;
+	cout<<"nhap so luong nhan vien : ";
+	cin>>n;
+	int i=0;
+	while(i<n)
+	{
+		int tuy_chon;
+		do
+		{
+			cout<<"nhan 1 de them cong nhan san xuat"<<endl;
+			cout<<"nhan 2 de them cong nhan ke toan"<<endl;
+			cout<<"nhan 3 de them cong nhan ban hang"<<endl;
+			cin>>tuy_chon;
+		}while(tuy_chon !=1 && tuy_chon !=2 && tuy_chon!=3);
+		i++;
+		cong_nhan *cn;
+		if(tuy_chon == 1)
+			cn=new CN_san_xuat();
+		else
+			if(tuy_chon == 2)
+				cn=new CN_ke_toan();
+			else 
+				cn=new CN_ban_hang();
+		cn->nhap();
+		qly->them(cn);
+	}
+	qly->xuat();
+	qly->tim();
+	qly->xoa();
+	qly->xuat();
+	
+	cout<<"tong so tien luong : "<<qly->tong_luong()<<endl;
+	qly->dem_loai();
+	/*delete qly;*/
+	return 0;
+}

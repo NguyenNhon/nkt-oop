@@ -61,13 +61,13 @@ public:
 
 int main()
 {
-	So_Phuc so_phuc1, so_phuc2;
+	So_Phuc so_phuc1, so_phuc2, so_phuc3, so_phuc4;
 
 	cin>>so_phuc1;
 	cin>>so_phuc2;
 
-	So_Phuc so_phuc3=so_phuc1+so_phuc2;
-	So_Phuc so_phuc4=so_phuc1-so_phuc2;
+	so_phuc3=so_phuc1+so_phuc2;
+	so_phuc4=so_phuc1-so_phuc2;
 
 	cout<<so_phuc1<<endl;
 	cout<<so_phuc2<<endl;

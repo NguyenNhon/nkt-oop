@@ -11,4 +11,4 @@ public:
 	}
 };
 // Khoi tao gia tri bien Dem ban dau la 0.
-unsigned int DocGia::Dem = 0;
+unsigned int A::Dem = 0;

@@ -1,0 +1,4 @@
+1. Public source code.
+2. Update their source code.
+3. Review their source code.
+

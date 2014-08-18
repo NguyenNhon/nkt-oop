@@ -34,7 +34,3 @@ enum eLop
 };
 
 // Define rules
-#define MAX_BOOK 100
-#define MAX_READER 100
-#define MAX_BORROW_BOOK 5
-#define MAX_PHIEU_MUON 100

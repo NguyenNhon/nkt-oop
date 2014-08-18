@@ -1,0 +1,27 @@
+﻿Build started 17-08-14 9:52:03 PM.
+     1>Project "E:\OOP\Quản lí sách thư viện\Quản lí sách thư viện\Quản lí sách thư viện.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Quản lí sách thư viện.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt bt1.cpp
+         Skipping... (no relevant changes detected)
+         bt1.cpp
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Quản lí sách thư viện.exe.embed.manifest.res" "Debug\Quản lí sách thư viện_manifest.rc" 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\OOP\Quản lí sách thư viện\Debug\Quản lí sách thư viện.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Quản lí sách thư viện.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\OOP\Quản lí sách thư viện\Debug\Quản lí sách thư viện.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\OOP\Quản lí sách thư viện\Debug\Quản lí sách thư viện.lib" /MACHINE:X86 "Debug\Quản lí sách thư viện.exe.embed.manifest.res"
+         Debug\bt1.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Quản lí sách thư viện.exe.embed.manifest" /manifest "Debug\Quản lí sách thư viện.exe.intermediate.manifest"
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         Quản lí sách thư viện.vcxproj -> E:\OOP\Quản lí sách thư viện\Debug\Quản lí sách thư viện.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\Quản lí sách thư viện.unsuccessfulbuild".
+         Touching "Debug\Quản lí sách thư viện.lastbuildstate".
+     1>Done Building Project "E:\OOP\Quản lí sách thư viện\Quản lí sách thư viện\Quản lí sách thư viện.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.72

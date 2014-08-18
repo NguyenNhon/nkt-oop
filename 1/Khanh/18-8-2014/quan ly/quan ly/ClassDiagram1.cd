@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="sach" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAABBAAAACAAAAAAAAAAAAAAgAAAAAAAIAAAgA=</HashCode>
+      <FileName>sach.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sachGK" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAIAAIAAIAIAAAAA=</HashCode>
+      <FileName>sachGk.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sachGT" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAABAIAAIAIAAAAA=</HashCode>
+      <FileName>sachGt.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qly_sach" Collapsed="true">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAAAAAAAAAAAAAIAAAIAAAAAAAAAAAoIAAAAA=</HashCode>
+      <FileName>qlysach.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="eLoaiSach" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>bientoancuc.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="eLinhVuc" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAgAAAAAAACAAA=</HashCode>
+      <FileName>bientoancuc.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="eLoaiDocGia" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAIAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>bientoancuc.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="eLop" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAAAAEAAAAQARAAAAAIBAAAAAAAAgAABAAAAAA=</HashCode>
+      <FileName>bientoancuc.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

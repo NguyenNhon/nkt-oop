@@ -1,0 +1,21 @@
+﻿Build started 18-08-14 10:51:42 AM.
+     1>Project "E:\OOP\Quản lí sách thư viện\Quản lý thư viện\Quản lý thư viện.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Quản lý thư viện.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt qlyphieumuon.cpp
+         qlyphieumuon.cpp
+     1>e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(3): error C2011: 'LoaiSach' : 'enum' type redefinition
+                 e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(3) : see declaration of 'LoaiSach'
+     1>e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(8): error C2011: 'LinhVuc' : 'enum' type redefinition
+                 e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(8) : see declaration of 'LinhVuc'
+     1>e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(14): error C2011: 'LoaiDocGia' : 'enum' type redefinition
+                 e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(14) : see declaration of 'LoaiDocGia'
+     1>e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(20): error C2011: 'Lop' : 'enum' type redefinition
+                 e:\oop\quản lí sách thư viện\quản lý thư viện\bien_toan_cuc.h(20) : see declaration of 'Lop'
+     1>e:\oop\quản lí sách thư viện\quản lý thư viện\qlyphieumuon.cpp(19): warning C4154: deletion of an array expression; conversion to pointer supplied
+     1>Done Building Project "E:\OOP\Quản lí sách thư viện\Quản lý thư viện\Quản lý thư viện.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.54

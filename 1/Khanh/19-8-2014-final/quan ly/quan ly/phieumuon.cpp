@@ -15,6 +15,7 @@ void phieumuon::nhap()
 	cout<<"nhap thu tu ma sach muon: "<<endl;
 	for(int i=0; i<sl_sach; i++)
 	{
+		int n=0;
 		fflush(stdin);
 		cin>>a[i];
 		for(int j=0;j<Qly_sach::qlysach->sl; j++)
@@ -35,9 +36,14 @@ void phieumuon::nhap()
 			}
 			else
 			{
-				cout<<" ma sach ko ton tai, vui long kiem tra lai"<<endl;
-				i--;
-				break;
+				n++;
+				if( n== Qly_sach::qlysach->sl)
+				{
+					cout<<" ma sach ko ton tai, vui long kiem tra lai"<<endl;
+					i--;
+					break;
+				}
+				
 			}
 		}
 

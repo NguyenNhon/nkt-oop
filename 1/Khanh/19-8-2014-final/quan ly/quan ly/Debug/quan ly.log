@@ -1,0 +1,70 @@
+﻿Build started 19/08/2014 17:20:38.
+     1>Project "D:\SVN OOP\1\Khanh\19-8-2014-final\quan ly\quan ly\quan ly.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\quan ly.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 1.cpp docgia.cpp phieumuon.cpp qlydocgia.cpp qlysach.cpp qlythuvien.cpp Qly_phieumuon.cpp sach.cpp sachGk.cpp sachGt.cpp
+         sachGt.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\sachgt.cpp(5): warning C4482: nonstandard extension used: enum 'eLoaiSach' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\sachgt.cpp(6): warning C4482: nonstandard extension used: enum 'eTinhTrang' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\sachgt.cpp(21): warning C4101: 'i' : unreferenced local variable
+         sachGk.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\sachgk.cpp(5): warning C4482: nonstandard extension used: enum 'eLoaiSach' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\sachgk.cpp(6): warning C4482: nonstandard extension used: enum 'eTinhTrang' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\sachgk.cpp(20): warning C4101: 'i' : unreferenced local variable
+         sach.cpp
+         Qly_phieumuon.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qly_phieumuon.cpp(19): warning C4154: deletion of an array expression; conversion to pointer supplied
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qly_phieumuon.cpp(32): warning C4482: nonstandard extension used: enum 'eTinhTrang' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qly_phieumuon.cpp(46): warning C4482: nonstandard extension used: enum 'eTinhTrang' used in qualified name
+         qlythuvien.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlythuvien.cpp(68): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlythuvien.cpp(69): warning C4482: nonstandard extension used: enum 'etinhtrang' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlythuvien.cpp(76): warning C4018: '<' : signed/unsigned mismatch
+         qlysach.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlysach.cpp(21): warning C4154: deletion of an array expression; conversion to pointer supplied
+         qlydocgia.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlydocgia.cpp(6): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlydocgia.cpp(13): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlydocgia.cpp(21): warning C4154: deletion of an array expression; conversion to pointer supplied
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlydocgia.cpp(30): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlydocgia.cpp(35): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\qlydocgia.cpp(37): warning C4482: nonstandard extension used: enum 'etinhtrang' used in qualified name
+         phieumuon.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\phieumuon.cpp(22): warning C4482: nonstandard extension used: enum 'eTinhTrang' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\phieumuon.cpp(27): warning C4482: nonstandard extension used: enum 'eTinhTrang' used in qualified name
+         docgia.cpp
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\docgia.cpp(5): warning C4482: nonstandard extension used: enum 'etinhtrang' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\docgia.cpp(15): warning C4482: nonstandard extension used: enum 'eLoaiDocGia' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\docgia.cpp(16): warning C4482: nonstandard extension used: enum 'eLoaiDocGia' used in qualified name
+     1>d:\svn oop\1\khanh\19-8-2014-final\quan ly\quan ly\docgia.cpp(17): warning C4482: nonstandard extension used: enum 'eLoaiDocGia' used in qualified name
+         1.cpp
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\quan ly.exe.embed.manifest.res" "Debug\quan ly_manifest.rc" 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SVN OOP\1\Khanh\19-8-2014-final\quan ly\Debug\quan ly.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\quan ly.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\SVN OOP\1\Khanh\19-8-2014-final\quan ly\Debug\quan ly.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SVN OOP\1\Khanh\19-8-2014-final\quan ly\Debug\quan ly.lib" /MACHINE:X86 "Debug\quan ly.exe.embed.manifest.res"
+         Debug\1.obj
+         Debug\docgia.obj
+         Debug\phieumuon.obj
+         Debug\qlydocgia.obj
+         Debug\qlysach.obj
+         Debug\qlythuvien.obj
+         Debug\Qly_phieumuon.obj
+         Debug\sach.obj
+         Debug\sachGk.obj
+         Debug\sachGt.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\quan ly.exe.embed.manifest" /manifest "Debug\quan ly.exe.intermediate.manifest"
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         quan ly.vcxproj -> D:\SVN OOP\1\Khanh\19-8-2014-final\quan ly\Debug\quan ly.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\quan ly.unsuccessfulbuild".
+         Touching "Debug\quan ly.lastbuildstate".
+     1>Done Building Project "D:\SVN OOP\1\Khanh\19-8-2014-final\quan ly\quan ly\quan ly.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.11

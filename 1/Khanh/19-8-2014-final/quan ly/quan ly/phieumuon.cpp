@@ -15,20 +15,29 @@ void phieumuon::nhap()
 	cout<<"nhap thu tu ma sach muon: "<<endl;
 	for(int i=0; i<sl_sach; i++)
 	{
+		fflush(stdin);
 		cin>>a[i];
 		for(int j=0;j<Qly_sach::qlysach->sl; j++)
 		{
 			if(a[i]== Qly_sach::qlysach->qly[j]->_ma) 
+			{
 				if(Qly_sach::qlysach->qly[j]->tinhtrang== eTinhTrang::het) 
 				{
 					cout<<"sach da dc muon, xin vui long muon sach khac"<<endl ;
 					i--;
+					break;
 				}
-				else Qly_sach::qlysach->qly[j]->tinhtrang= eTinhTrang::het;
+				else
+				{
+					Qly_sach::qlysach->qly[j]->tinhtrang= eTinhTrang::het;
+					break;
+				}
+			}
 			else
 			{
-				i--;
 				cout<<" ma sach ko ton tai, vui long kiem tra lai"<<endl;
+				i--;
+				break;
 			}
 		}
 

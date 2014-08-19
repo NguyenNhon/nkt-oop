@@ -65,8 +65,14 @@ void Qly_thuvien::indanhsachsachdamuon()
 }
 void Qly_thuvien::indanhsachdocgiadamuon()
 {
+	int dem=0;
 	for(int i=0; i< Qly_docgia::qlydocgia->sl;i++)
-		if( Qly_docgia::qlydocgia->Qly[i]->tinhtrang== etinhtrang::damuon) cout<<"cac doc gia da muon sach la: "<< Qly_docgia::qlydocgia->Qly[i]->_ma<<"\t";
+		if( Qly_docgia::qlydocgia->Qly[i]->tinhtrang== etinhtrang::damuon) 
+		{
+			dem++;
+			cout<<"cac doc gia da muon sach la: "<< Qly_docgia::qlydocgia->Qly[i]->_ma<<"\t";
+		}
+		if(dem==0) cout<<"chua co doc gia hoac chua doc gia nao muon sach! vui long kiem tra lai"<<endl;
 }
 void Qly_thuvien::tracuudocgia()
 {

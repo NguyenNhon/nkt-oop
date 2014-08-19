@@ -2,3 +2,8 @@
 2. Update their source code.
 3. Review their source code.
 
+change.
+1. Talk about new part.
+2. Give task.
+3. Ask about final project.
+

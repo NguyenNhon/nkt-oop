@@ -154,6 +154,8 @@ public:
 	}
 };
 QLSach *QLSach ::qls=new QLSach();
+
+
 class DocGia
 {
 protected:
@@ -253,6 +255,9 @@ public:
 		return b[x];
 	}
 };
+
+
+
 QLDG *QLDG::qldg=new QLDG();
 
 struct Time

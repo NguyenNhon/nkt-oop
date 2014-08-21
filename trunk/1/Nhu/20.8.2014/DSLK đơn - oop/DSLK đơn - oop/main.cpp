@@ -84,7 +84,7 @@ public:
 		cout<<"danh sach lien ket don : "<<endl;
 		while(p != NULL)
 		{
-			cout<<_head->Data()<<"\t";
+			cout<<p->Data()<<"\t";
 			p=p->GetNext();
 		}
 	}

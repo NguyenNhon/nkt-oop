@@ -57,9 +57,15 @@ public:
 
 	void InsertHead(Node *node)
 	{
-		node->SetNext(_head);
-		_head=node;
-
+		if(_head == NULL)
+		{
+			_head = _tail = node;
+		}
+		else
+		{
+			node->SetNext(_head);
+			_head=node;
+		}
 	}
 	void InsertBack(Node *node)
 	{
